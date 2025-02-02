@@ -1,0 +1,1 @@
+This project is a collection of Python scripts to analyze time-series data. I used these scrits in my research on inflation and the stock market. Two Matlab scripts are included, which are utilized using the matlabengine package developped my MathWorks.
