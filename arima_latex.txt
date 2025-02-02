@@ -1,0 +1,33 @@
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}          &        Pi        & \textbf{  No. Observations:  } &    129      \\
+\textbf{Model:}                  &  ARIMA(1, 0, 1)  & \textbf{  Log Likelihood     } &  -161.501   \\
+\textbf{Date:}                   & Thu, 18 Jul 2024 & \textbf{  AIC                } &  331.002    \\
+\textbf{Time:}                   &     09:57:16     & \textbf{  BIC                } &  342.441    \\
+\textbf{Sample:}                 &    03-31-1992    & \textbf{  HQIC               } &  335.650    \\
+\textbf{}                        &   - 03-31-2024   & \textbf{                     } &             \\
+\textbf{Covariance Type:}        &       opg        & \textbf{                     } &             \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                & \textbf{coef} & \textbf{std err} & \textbf{z} & \textbf{P$> |$z$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
+\midrule
+\textbf{const}  &      -0.1223  &        0.112     &    -1.088  &         0.276        &       -0.343    &        0.098     \\
+\textbf{ar.L1}  &       0.4286  &        0.275     &     1.556  &         0.120        &       -0.111    &        0.968     \\
+\textbf{ma.L1}  &      -0.1651  &        0.299     &    -0.552  &         0.581        &       -0.751    &        0.421     \\
+\textbf{sigma2} &       0.7156  &        0.076     &     9.357  &         0.000        &        0.566    &        0.865     \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lclc}
+\textbf{Ljung-Box (L1) (Q):}     & 0.00 & \textbf{  Jarque-Bera (JB):  } &  4.73  \\
+\textbf{Prob(Q):}                & 0.99 & \textbf{  Prob(JB):          } &  0.09  \\
+\textbf{Heteroskedasticity (H):} & 0.18 & \textbf{  Skew:              } & -0.03  \\
+\textbf{Prob(H) (two-sided):}    & 0.00 & \textbf{  Kurtosis:          } &  3.94  \\
+\bottomrule
+\end{tabular}
+%\caption{SARIMAX Results}
+\end{center}
+
+Warnings: \newline
+ [1] Covariance matrix calculated using the outer product of gradients (complex-step).
