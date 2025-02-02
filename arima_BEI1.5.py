@@ -18,9 +18,11 @@ matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
 # 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
 
+user = input('Please insert username.')
+
 subtract_trgt = False
 
-lib_data = '/media/u70o/D/data'
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
 fname = 'INF_TRGT.D.xlsx'
@@ -38,14 +40,14 @@ fpath_data = os.path.join(lib_israel, fname)
 # TSB_ZRD = TSB_ZRD.asfreq('M', method='ffill')
 # TSB_ZRD = TSB_ZRD.shift(periods=1, freq='M')  # shift TSB_ZRD one month forward
 
-TSB_ZRD = pd.read_csv('/media/u70o/D/data/Israel/TSB_ZND_15/TSB_ZND_01Y.M_15.csv')
+TSB_ZRD = pd.read_csv('/media/%s/D/data/Israel/TSB_ZND_15/TSB_ZND_01Y.M_15.csv' % user)
 TSB_ZRD.date = pd.to_datetime(TSB_ZRD.date)
 TSB_ZRD = TSB_ZRD.set_index('date').asfreq('M', method='ffill')  # shifts two weeks forward
 TSB_ZRD = TSB_ZRD.shift(periods=1, freq='M')  # shift one month forward
 
 
-nominal_bond1 = pd.read_csv('/media/u70o/D/data/Israel/MAKAM_yields_15/MAKAM_yields_M01.M_15.csv')
-nominal_bond2 = pd.read_csv('/media/u70o/D/data/Israel/MAKAM_yields_15/MAKAM_yields_M02.M_15.csv')
+nominal_bond1 = pd.read_csv('/media/%s/D/data/Israel/MAKAM_yields_15/MAKAM_yields_M01.M_15.csv' % user)
+nominal_bond2 = pd.read_csv('/media/%s/D/data/Israel/MAKAM_yields_15/MAKAM_yields_M02.M_15.csv' % user)
 nominal_bond = pd.merge(nominal_bond1, nominal_bond2)
 nominal_bond.date = pd.to_datetime(nominal_bond.date)
 nominal_bond = nominal_bond.set_index('date').asfreq('M', method='ffill')  # shifts two weeks forward
@@ -105,9 +107,9 @@ q_err = 1
 eps_name = 'epsilon_%d%d%d' % (p, d, q)
 
 fname_arima = 'arima_%d%d%d_il.csv' % (p, d, q)
-fpath_arima_NRC = os.path.join('/home/u70o/Documents/MATLAB/NRC', fname_arima)
-# fpath_arima_Fama1981 = os.path.join('/home/u70o/Documents/MATLAB/Fama1981', fname_arima)
-fpath_arima_TASE = os.path.join('/home/u70o/Documents/MATLAB/TASE', fname_arima)
+fpath_arima_NRC = os.path.join('/home/%s/Documents/MATLAB/NRC' % user, fname_arima)
+# fpath_arima_Fama1981 = os.path.join('/home/%s/Documents/MATLAB/Fama1981' % user, fname_arima)
+fpath_arima_TASE = os.path.join('/home/%s/Documents/MATLAB/TASE' % user, fname_arima)
 
 if d == 0:
     trend = 'c'

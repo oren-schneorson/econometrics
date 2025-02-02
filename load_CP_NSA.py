@@ -7,8 +7,7 @@ from numpy import log, array
 import matlab.engine
 eng = matlab.engine.start_matlab()
 
-# user = 'u70o'
-user = 'oren-laptop'
+user = input('Please insert username.')
 
 lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')

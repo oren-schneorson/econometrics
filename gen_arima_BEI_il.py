@@ -12,7 +12,9 @@ matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
 # 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
 
-lib_data = '/media/u70o/D/data'
+user = input('Please insert username.')
+
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
 fname = 'INF_TRGT.D.xlsx'
@@ -73,7 +75,7 @@ p = 0
 d = 0
 q = 1
 
-fpath_arima = '/home/u70o/Documents/MATLAB/NRC/arima_BEI_%d%d%d_il.csv' % (p, d, q)
+fpath_arima = '/home/%s/Documents/MATLAB/NRC/arima_BEI_%d%d%d_il.csv' % (user, p, d, q)
 
 if d == 0:
     trend = 'c'
@@ -149,7 +151,7 @@ data.loc[:, 'ma'].plot()
 # data[[eps_name, 'ma']].plot()
 plt.show(block=True)
 
-# UITB = pd.read_excel('/media/u70o/D/data/Israel/UITB.xlsx')
+# UITB = pd.read_excel('/media/%s/D/data/Israel/UITB.xlsx' % user)
 # pd.plotting.autocorrelation_plot(data.loc[:, eps_name].iloc[1:]).set_xlim([0, 24])
 # pd.plotting.autocorrelation_plot(UITB.UITB).set_xlim([0, 24])
 

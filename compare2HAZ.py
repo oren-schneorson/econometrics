@@ -13,7 +13,9 @@ matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
 # 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
 
-lib_data = '/media/u70o/D/data'
+user = input('Please insert username.')
+
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
 fname = 'CP_NSA.M.csv'
@@ -34,7 +36,7 @@ p = 1
 d = 0
 q = 1
 
-fpath_arima = '/home/u70o/Documents/MATLAB/NRC/arima_%d%d%d_il.csv' % (p, d, q)
+fpath_arima = '/home/%s/Documents/MATLAB/NRC/arima_%d%d%d_il.csv' % (user, p, d, q)
 
 arima = pd.read_csv(fpath_arima)
 arima.date = pd.to_datetime(arima.date, dayfirst=False)

@@ -18,9 +18,11 @@ matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
 # 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
 
+user = input('Please insert username.')
+
 subtract_trgt = False
 
-lib_data = '/media/u70o/D/data'
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
 fname = 'INF_TRGT.D.xlsx'
@@ -42,7 +44,7 @@ BEI = pd.merge(nominal_bond[nominal_bond.columns[:1]], TSB_ZRD[TSB_ZRD.columns[:
 BEI.loc[:, 'BEI'] = (BEI.loc[:, nominal_bond.columns[0]] - BEI.loc[:, TSB_ZRD.columns[0]])/12
 
 
-fpath_inf_trgt = '/media/u70o/D/data/Israel/INF_TRGT.M.xlsx'
+fpath_inf_trgt = '/media/%s/D/data/Israel/INF_TRGT.M.xlsx' % user
 INF_TRGT = pd.read_excel(fpath_inf_trgt, skiprows=7)  # FAME dataset
 cols_trgt = ['INF_MIN_TRGT.M', 'INF_MAX_TRGT.M']
 INF_TRGT.columns = ['date', ] + cols_trgt
@@ -91,9 +93,9 @@ q_err = 2
 eps_name = 'epsilon_%d%d%d' % (p, d, q)
 
 fname_arima = 'arima_%d%d%d_il.csv' % (p, d, q)
-fpath_arima_NRC = os.path.join('/home/u70o/Documents/MATLAB/NRC', fname_arima)
-# fpath_arima_Fama1981 = os.path.join('/home/u70o/Documents/MATLAB/Fama1981', fname_arima)
-fpath_arima_TASE = os.path.join('/home/u70o/Documents/MATLAB/TASE', fname_arima)
+fpath_arima_NRC = os.path.join('/home/%s/Documents/MATLAB/NRC' % user, fname_arima)
+# fpath_arima_Fama1981 = os.path.join('/home/%s/Documents/MATLAB/Fama1981' % user, fname_arima)
+fpath_arima_TASE = os.path.join('/home/%s/Documents/MATLAB/TASE' % user, fname_arima)
 
 if d == 0:
     trend = 'c'

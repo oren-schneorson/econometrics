@@ -20,7 +20,9 @@ matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
 # 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
 
-lib_data = '/media/u70o/D/data'
+user = input('Please insert username.')
+
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
 fname = 'INF_TRGT.D.xlsx'

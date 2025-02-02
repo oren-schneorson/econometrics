@@ -16,7 +16,9 @@ matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
 # 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
 
-lib_data = '/media/u70o/D/data'
+user = input('Please insert username.')
+
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
 fname = 'INF_TRGT.D.xlsx'
@@ -97,9 +99,9 @@ d = 0
 q = 1
 
 fname_arima = 'arima_%d%d%d_%s_il.csv' % (p, d, q, freq)
-fpath_arima_NRC = os.path.join('/home/u70o/Documents/MATLAB/NRC', fname_arima)
-# fpath_arima_Fama1981 = os.path.join('/home/u70o/Documents/MATLAB/Fama1981', fname_arima)
-fpath_arima_TASE = os.path.join('/home/u70o/Documents/MATLAB/TASE', fname_arima)
+fpath_arima_NRC = os.path.join('/home/%s/Documents/MATLAB/NRC' % user, fname_arima)
+# fpath_arima_Fama1981 = os.path.join('/home/%s/Documents/MATLAB/Fama1981' % user, fname_arima)
+fpath_arima_TASE = os.path.join('/home/%s/Documents/MATLAB/TASE' % user,  fname_arima)
 fpath_arima_UIAR = os.path.join(lib_israel, 'UIAR.xlsx')
 
 if d == 0:

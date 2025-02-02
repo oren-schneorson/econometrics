@@ -7,11 +7,13 @@ from FAME import *
 from numpy import log
 from datetime import datetime
 
-lib_data = '/media/u70o/D/data'
+user = input('Please insert username.')
+
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
-fpath_arima_101 = '/home/u70o/Documents/MATLAB/NRC/legacy/arima_101_il.csv'
-fpath_arima_011 = '/home/u70o/Documents/MATLAB/NRC/legacy/arima_011_il.csv'
+fpath_arima_101 = '/home/%s/Documents/MATLAB/NRC/legacy/arima_101_il.csv' % user
+fpath_arima_011 = '/home/%s/Documents/MATLAB/NRC/legacy/arima_011_il.csv' % user
 
 arima_101 = pd.read_csv(fpath_arima_101)
 arima_011 = pd.read_csv(fpath_arima_011)

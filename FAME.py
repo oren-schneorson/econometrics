@@ -52,7 +52,8 @@ def read_FAME(series_, lib_series_, generate_csvs_=False, dayfirst_=True):
     return data_, metadata_
 
 
-# lib_data = '/media/u70o/D/data'
+# user = input('Please insert username.')
+# lib_data = '/media/%s/D/data' % user
 # freqs = ['M', 'D']
 # seriess = ['TSB_BAGR_MAKAM', 'TSB_BAGR_GALIL', 'TSB_BAGR_GILON', 'TSB_BAGR_SHACHAR']
 # # seriess = ['TSB_BAGR_MAKAM', ]

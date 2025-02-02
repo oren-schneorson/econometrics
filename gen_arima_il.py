@@ -13,9 +13,7 @@ import matplotlib.pyplot as plt
 import shutil
 from load_CP_NSA import *
 
-# user = 'u70o'
-user = 'oren-laptop'
-
+user = input('Please insert username.')
 
 matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
