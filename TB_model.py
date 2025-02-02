@@ -21,10 +21,12 @@ matplotlib.use('QtAgg')
 # ['GTK3Agg', 'GTK3Cairo', 'GTK4Agg', 'GTK4Cairo', 'MacOSX', 'nbAgg', 'QtAgg', 'QtCairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg',
 # 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
 
-lib_data = '/media/u70o/D/data'
+user = input('Please insert username.')
+
+lib_data = '/media/%s/D/data' % user
 lib_israel = os.path.join(lib_data, 'Israel')
 
-fpath_fear_index = '/media/u70o/D/data/Israel/FEAR_INDEX.D.xlsx'
+fpath_fear_index = '/media/%s/D/data/Israel/FEAR_INDEX.D.xlsx' % user
 FEAR_INDEX = pd.read_excel(fpath_fear_index, skiprows=7)  # FAME dataset
 FEAR_INDEX.columns = ['date', 'FEAR_INDEX']
 FEAR_INDEX.date = pd.to_datetime(FEAR_INDEX.date, dayfirst=False)
@@ -34,14 +36,14 @@ idx_FEAR_INDEX_censored = FEAR_INDEX.FEAR_INDEX >= np.percentile(FEAR_INDEX.FEAR
 FEAR_INDEX.loc[:, 'FEAR_dummy'] = 0
 FEAR_INDEX.loc[idx_FEAR_INDEX_censored, 'FEAR_dummy'] = 1
 
-fpath_Rf = '/media/u70o/D/data/Israel/MAKAM_yields/M/MAKAM_yields_M01.M.csv'
+fpath_Rf = '/media/%s/D/data/Israel/MAKAM_yields/M/MAKAM_yields_M01.M.csv' % user
 nominal_bond = pd.read_csv(fpath_Rf)
 nominal_bond.date = pd.to_datetime(nominal_bond.date, dayfirst=False)
 # nominal_bond = nominal_bond.set_index('date').asfreq('M', method='ffill')
 nominal_bond = nominal_bond.set_index('date').asfreq('M', method='ffill').shift(periods=1, freq='M')
 nominal_bond.columns = ['Rf']
 
-fpath_TSB_ZRD = '/media/u70o/D/data/Israel/TSB_ZRD/M/TSB_ZRD_01Y.M.csv'
+fpath_TSB_ZRD = '/media/%s/D/data/Israel/TSB_ZRD/M/TSB_ZRD_01Y.M.csv' % user
 real_bond = pd.read_csv(fpath_TSB_ZRD)
 real_bond.date = pd.to_datetime(real_bond.date, dayfirst=False)
 real_bond = real_bond.set_index('date').asfreq('M', method='ffill').shift(periods=1, freq='M')
