@@ -5,8 +5,9 @@ import pandas as pd
 from numpy import log
 # from datetime import datetime
 
+user = input('Please insert username.')
 
-lib_data = '/media/u70o/D/data'
+lib_data = '/media/%s/D/data' % user
 lib_cpi_usa = os.path.join(lib_data, 'cpi_usa')
 
 fname = 'CPIAUCSL.csv'
@@ -28,7 +29,7 @@ p = 0
 d = 1
 q = 1
 
-fpath_arima = '/home/u70o/Documents/MATLAB/NRC/arima_%d%d%d_usa.csv' % (p, d, q)
+fpath_arima = '/home/%s/Documents/MATLAB/NRC/arima_%d%d%d_usa.csv' % (user, p, d, q)
 
 if p == 1 and d == 0 and q == 1:
     trend = 'c'
